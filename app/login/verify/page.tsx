@@ -1,3 +1,3 @@
 export default function LoginVerify() {
-  return <div>LoginVerify</div>
+  return <div>LoginVerify</div>;
 }

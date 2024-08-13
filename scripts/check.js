@@ -1,19 +1,19 @@
-const fs = require('fs/promises');
-const path = require('path');
+const fs = require("fs/promises");
+const path = require("path");
 
-const sourceFilePath = path.join(__dirname, '../.env.example');
-const destinationFilePath = path.join(__dirname, '../.env');
+const sourceFilePath = path.join(__dirname, "../.env.example");
+const destinationFilePath = path.join(__dirname, "../.env");
 
 (async () => {
   try {
     await fs.access(destinationFilePath);
-    console.log('The .env file already exists');
+    console.log("The .env file already exists");
   } catch (err) {
     try {
       await fs.copyFile(sourceFilePath, destinationFilePath);
-      console.log('The .env file has been successfully created');
+      console.log("The .env file has been successfully created");
     } catch (error) {
-      console.error('Error copying file:', error);
+      console.error("Error copying file:", error);
     }
   }
 })();
