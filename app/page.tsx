@@ -2,13 +2,13 @@
 // import withTheme from '../../../theme';
 
 // import withTheme from "@/theme";
-import {Button} from "antd";
+import {Button, Spin} from "antd";
 
 function Home() {
   return (
-    <div>
-      <h1>Welcome to My Store</h1>
-      <Button>你好</Button>
+    <div className={'w-full h-[80vh] flex justify-center items-center'}>
+      <Spin spinning={true}>
+      </Spin>
     </div>
   );
 }

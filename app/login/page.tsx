@@ -24,16 +24,8 @@ const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
 export default function Login() {
 
   return <div>
-    <header className="py-4">
-      <div className="flex justify-center">
-        <a
-        className="uppercase font-bold flex-1 justify-center items-center flex" href="/">Canyon</a>
-      </div>
-    </header>
     <div className="mx-auto">
       <h2 className="text-center py-4 text-xl">Welcome back</h2>
-
-
       <Form
         name="basic"
         labelCol={{ span: 8 }}
