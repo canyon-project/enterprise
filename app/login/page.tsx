@@ -1,6 +1,7 @@
 "use client";
 import { Button, Form, FormProps, Input } from "antd";
 import axios from "axios";
+import { MailOutlined } from "@ant-design/icons";
 
 type FieldType = {
   email?: string;
@@ -24,30 +25,35 @@ export default function Login() {
     <div>
       <div className="mx-auto">
         <h2 className="text-center py-4 text-xl">Welcome back</h2>
-        <Form
-          name="basic"
-          labelCol={{ span: 8 }}
-          wrapperCol={{ span: 16 }}
-          style={{ maxWidth: 600 }}
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
-        >
-          <Form.Item<FieldType>
-            label="email"
-            name="email"
-            rules={[{ required: true, message: "Please input your email!" }]}
+        <div className={"flex justify-center py-[48px]"}>
+          <Form
+            className={"w-[512px] rounded-lg"}
+            name="basic"
+            layout={"vertical"}
+            style={{ border: "1px solid #000", padding: "32px" }}
+            initialValues={{ remember: true }}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            autoComplete="off"
           >
-            <Input />
-          </Form.Item>
+            <Form.Item<FieldType>
+              label="email"
+              name="email"
+              rules={[{ required: true, message: "Please input your email!" }]}
+            >
+              <Input
+                prefix={<MailOutlined style={{ color: "#d9d9d9" }} />}
+                placeholder={"Enter your email address"}
+              />
+            </Form.Item>
 
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="primary" htmlType="submit">
-              Login via magic link
-            </Button>
-          </Form.Item>
-        </Form>
+            <Form.Item>
+              <Button type="primary" htmlType="submit" className={"w-full"}>
+                Login via magic link
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
       </div>
     </div>
   );

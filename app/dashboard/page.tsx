@@ -29,12 +29,6 @@ export default function Dashboard() {
   ];
   return (
     <div className={"px-[24px]"}>
-      <h2
-        className={"py-[16px] text-[16px] text-center"}
-        style={{ fontWeight: 500 }}
-      >
-        CANYON
-      </h2>
       <div className={"py-[48px] px-[24px]"}>
         <Space className={"pb-[32px]"}>
           <Button

@@ -11,7 +11,7 @@ const RootLayout = ({ children }: React.PropsWithChildren) => {
       <body>
         <AntdRegistry>
           {withTheme(
-            <div>
+            <div className={"px-[24px]"}>
               <Header />
               {children}
             </div>,
