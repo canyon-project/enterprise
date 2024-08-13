@@ -37,7 +37,7 @@ export default function Login() {
             autoComplete="off"
           >
             <Form.Item<FieldType>
-              label="email"
+              label="Email"
               name="email"
               rules={[{ required: true, message: "Please input your email!" }]}
             >
