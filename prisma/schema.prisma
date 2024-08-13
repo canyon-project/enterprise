@@ -1,0 +1,18 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
+}
+
+model License {
+  id             String   @id @default(uuid())
+  key            String
+  nextPaymentDue Int      @map("next_payment_due")
+  seatsPurchased DateTime @map("seats_purchased")
+
+  @@map("license")
+}
