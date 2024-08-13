@@ -12,8 +12,11 @@
     "migrate": "prisma migrate dev"
   },
   "dependencies": {
-    "next": "14.2.5",
     "@prisma/client": "5.16.1",
+    "antd": "^5.20.1",
+    "axios": "^1.7.3",
+    "jsonwebtoken": "^9.0.2",
+    "next": "14.2.5",
     "prisma": "5.16.1",
     "react": "^18",
     "react-dom": "^18"

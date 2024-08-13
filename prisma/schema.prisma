@@ -9,10 +9,20 @@ generator client {
 }
 
 model License {
-  id             String   @id @default(uuid())
+  id             String   @id @default(cuid())
+  email          String
   key            String
   nextPaymentDue Int      @map("next_payment_due")
   seatsPurchased DateTime @map("seats_purchased")
 
-  @@map("license")
+  @@map("enterprise_license")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  token     String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("enterprise_user")
 }
