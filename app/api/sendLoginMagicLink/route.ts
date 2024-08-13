@@ -26,7 +26,7 @@ export async function POST(request) {
         token: token,
       },
     })
-  const url = `https://enterprise.canyoncov.com`
+  const url = `https://enterprise-production.up.railway.app`
   // const url = `http://localhost:3000`
   return Response.json({ data:`${url}/api/dashboard/auth/callback/email?callbackUrl=${url}&email=${email}&token=${token}` })
 }
