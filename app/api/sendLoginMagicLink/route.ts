@@ -26,5 +26,7 @@ export async function POST(request) {
         token: token,
       },
     })
-  return Response.json({ data:`http://localhost:3000/api/dashboard/auth/callback/email?callbackUrl=http://localhost:3000&email=${email}&token=${token}` })
+  const url = `https://enterprise.canyoncov.com`
+  // const url = `http://localhost:3000`
+  return Response.json({ data:`${url}/api/dashboard/auth/callback/email?callbackUrl=${url}&email=${email}&token=${token}` })
 }
