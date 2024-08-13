@@ -12,6 +12,8 @@
     "migrate": "prisma migrate dev"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.4.0",
+    "@ant-design/nextjs-registry": "^1.0.1",
     "@prisma/client": "5.16.1",
     "antd": "^5.20.1",
     "axios": "^1.7.3",
