@@ -10,13 +10,6 @@ export async function GET(request) {
   if (!callbackUrl || !token || !email) {
     return NextResponse.error();
   } else {
-    // 1.检查token是否匹配
-    // await prisma.user.create({
-    //   data: {
-    //     email,
-    //     token,
-    //   }
-    // })
     const user = await prisma.user.findFirst({
       where: {
         email,
@@ -25,16 +18,10 @@ export async function GET(request) {
     });
 
     if (user) {
-      //   正确
-      // Create a response and set the cookies
       const response = NextResponse.redirect(callbackUrl);
-
-      // Set the cookies
       response.cookies.set("callbackUrl", callbackUrl);
       response.cookies.set("token", token);
       response.cookies.set("email", email);
-
-      // Return the response which includes the redirection
       return response;
     } else {
       //   错误

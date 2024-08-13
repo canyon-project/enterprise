@@ -10,7 +10,6 @@ type FieldType = {
 
 const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
   console.log("Success:", values);
-  // Login via magic link
   axios.post("/api/sendLoginMagicLink", values).then((res) => {
     console.log(res);
   });
